@@ -1,0 +1,72 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidential Email</title>
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+        <main id="email">
+          <div id="confidential">Confidential</div>
+          <p>frgerfefref <span class="blurred">fewfewf</span> wfwe fwefwe wefwefwe  fewfwe fewf fewfw </p>
+
+          <p>frgerfefref fewfewf <span>fewfewf</span>  wfwe fwefwe wefwefwe  fewfwe fewf fewfw <span class="blurred">fewfewf</span> </p>
+
+          <p>frgerfefref fewfewf wfwe fwefwe wefwefwe <span>fewfewf</span>   fewfwe fewf fewfw<span class="blurred">fewfewf</span> </p>
+          <div id="top-secret">Top secret</div>
+        </main>
+</body>
+
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+#email{
+  width: 500px;
+  height: 500px;
+  background-color: #FFF5EE;
+  padding: 50px;
+  border: 2px solid black;
+  margin-top: 50px;
+  box-shadow: 10 10 black;
+  box-sizing: border-box;
+  
+  
+}
+
+#confidential, #top-secret {
+  display: inline-block;
+  padding: 15px;
+  margin-left: 2px;
+  border: 4px solid red;
+  width: 150px;
+  height: 10px;
+  font-size: 20px;
+  color: red;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+#confidential{
+  transform: rotate(5deg);
+}
+#top-secret{
+  transform: rotate(-15deg);
+}
+
+.blurred{
+  filter: blur(3px)
+}
+
+
+** end of styles.css **
+
