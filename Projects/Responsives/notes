@@ -1,0 +1,17 @@
+pixel hota hai hamesha fixed
+percent hota hai parent pr dependent
+vw screen ki width
+vh viewport height.. screen ki height
+vmax dono width or height ko dekh rha hota hai 
+em... let say apke parent mn font size 10px hai ... ab yhi font agr child ka 2em hega toh means
+yeh hojaega 20px bcz 10+10 = 20.... so yhe parent ko lekr chalta hai 
+rem root em ... means yeh k root ko leta hai.. 1 rem = 16px (fixed  )
+ch= kitne charcters ki width.
+lh = line height!
+
+flex-wrap: wrap and nowrap
+flex-shrink: 0 phela wala div shrik nhi karega!! (yeh child ko doge)
+
+
+Tailwind Css:
+lg md sm
