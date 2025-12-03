@@ -1,0 +1,440 @@
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Root wrapper */
+.df-testimonials-section {
+ font-family: "Plus Jakarta Sans", sans-serif;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 16px 70px;
+  color: #111827;
+}
+
+/* Scroll Window with Fade */
+.df-testimonials-window {
+  position: relative;
+  max-height: 650px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.df-testimonials-window::after {
+  content: "";
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.85) 60%,
+    #ffffff 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Masonry layout */
+.df-testimonials-masonry {
+  column-count: 3;
+  column-gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .df-testimonials-masonry { column-count: 2; }
+}
+
+@media (max-width: 767px) {
+  .df-testimonials-section {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .df-testimonials-masonry { column-count: 1; }
+}
+
+/* Card styling */
+.df-card {
+  break-inside: avoid;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #eceff3;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+  padding: 18px 20px 20px;
+  margin-bottom: 24px;
+  color: #374151;
+}
+
+/* Card Top Row */
+.df-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.df-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+}
+.df-ph-cta a {
+  background: #ffffff !important;
+   border-color: #4285f4 !important; /* Google blue border */
+  color: #4285f4 !important; /* text color on hover */
+  border: 1px solid #4285f4 !important;
+  transition: all 0.25s ease !important;
+}
+
+.df-ph-cta a:hover {
+  background: #eaf3ff !important; /* hover background color */
+  border-color: #4285f4 !important; /* Google blue border */
+  color: #4285f4 !important; /* text color on hover */
+}
+.df-ph-pill {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  background: #ff4d4d !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  padding-top: 1px !important; /* corrects vertical optical shift */
+}
+
+.df-ph-cta a:hover .df-ph-pill {
+  background: #4285f4 !important;
+}
+
+
+.df-ph-pill {
+  background: #4285f4 !important; /* pill hover color */
+  color: #ffffff !important;
+}
+
+
+
+/* Avatar */
+.df-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.df-avatar--green { background: #22c55e; }
+.df-avatar--blue { background: #3b82f6; }
+.df-avatar--orange { background: #fb923c; }
+.df-avatar--purple { background: #a855f7; }
+.df-avatar--pink { background: #ec4899; }
+.df-avatar--yellow { background: #facc15; }
+
+/* Name and Role */
+.df-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.df-role {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+/* Tablet */
+@media (max-width: 1024px) {
+  .df-testimonials-window {
+    max-height: 900px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .df-testimonials-window {
+    max-height: 1400px !important; /* show 5 or 6 cards before fade */
+  }
+}
+
+/* Product Hunt Badge */
+.df-ph-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #ff4d4d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Stars */
+.df-stars {
+  color: #fbbf24;
+  font-size: 16px;
+  margin: 4px 0 10px;
+}
+
+/* Text */
+.df-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1b1c1d;
+}
+
+/* Product Hunt CTA */
+.df-ph-cta { text-align: center; margin-top: 10px; }
+
+.df-ph-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  background: #ffffff;
+  border: 1px solid #ff4d4d;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff4d4d;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(53, 97, 209, 0.28);
+}
+
+.df-ph-pill {
+  width: 22px;
+  height: 22px;
+  background: #ff4d4d;
+  border-radius: 999px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.df-ph-count {
+  font-size: 12px;
+  font-weight: 700;
+}
+</style>
+
+<section class="df-testimonials-section">
+
+  <div class="df-testimonials-window">
+    <div class="df-testimonials-masonry">
+
+      <!-- Joy Garcia -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a-/ALV-UjXr_-Un3hlzRJQusXZif-iBVMatNLUyXYgHFtLoF_kSSO5fDbfSBQ=w90-h90-p-rp-mo-ba3-br100" alt="Joy Garcia" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Joy Garcia</h4>
+              <p class="df-role">Real Estate Investor</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Denali offered the best rate and lowest fees compared to multiple lenders. Abe was fast, courteous, and closed my VA IRRRL in about a week and a half. As an investor who works with many lenders, this was one of my best experiences.
+        </p>
+      </article>
+
+      <!-- Monica Workman -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a/ACg8ocIUcUJ1RDqcWXMBzY00YNhaUwCpqH-hajgBGvYR_K6F3AwMdg=w90-h90-p-rp-mo-br100" alt="Monica Workman" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Monica Workman</h4>
+              <p class="df-role">Refinance Client</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Rich guided me through every step and was always available for questions. He made refinancing simple and stress free. I truly appreciate his patience and professionalism.
+        </p>
+      </article>
+
+      <!-- Michael Brooks -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a-/ALV-UjUzyg2Fbc11NkosqBLYLTzZYp2hEGYTSJyHBED6AbOzDAG_sLKC=w90-h90-p-rp-mo-br100" alt="Michael Brooks" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Michael Brooks</h4>
+              <p class="df-role">Homeowner</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          George was amazing to work with. He wasn’t pushy and helped us qualify using my wife's credit score. This made our home renovation plans possible.
+        </p>
+      </article>
+
+      <!-- Dracodi Vaughn -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a-/ALV-UjWQXiENSURPErUNCXosJJXbLp-M2E-juTA0vzJxjLi2NWO9veE=w90-h90-p-rp-mo-br100" alt="Dracodi Vaughn" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Dracodi Vaughn</h4>
+              <p class="df-role">Repeat Homebuyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Yasamin helped us secure our dream home and provided exceptional communication throughout. This was our third purchase and she has been the best loan officer we’ve worked with.
+        </p>
+      </article>
+
+      <!-- Kirk Sailor -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a-/ALV-UjUkLaVzSlKd7S-s5-8Fy7IW7K1XB1PRoRp9CcdnyXwvsny9RmbF8g=w90-h90-p-rp-mo-ba2-br100" alt="Kirk Sailor" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Kirk Sailor</h4>
+              <p class="df-role">Homeowner</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          George explained everything in a way that was easy to understand and kept the process moving quickly. I recommend Denali to anyone looking for a smooth experience.
+        </p>
+      </article>
+
+      <!-- Christina -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a/ACg8ocIyzblbOv1O1pwsj4Bn903b2Nk3i3Y4CtC1ULCdWNxklVaz8Q=w90-h90-p-rp-mo-ba2-br100" alt="Christina" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Christina</h4>
+              <p class="df-role">Homebuyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Devin and Yas were incredible. They always answered my questions and kept me informed along the way. They truly looked out for my best interest.
+        </p>
+      </article>
+
+      <!-- Reneisa Chaney -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <img class="df-avatar-img" src="https://lh3.googleusercontent.com/a-/ALV-UjWB61PayipacqmTGj89pjqzdnLEfG2LRw2nm8x8Rar35m58Px0=w90-h90-p-rp-mo-br100" alt="Reneisa Chaney" style="width:42px;height:42px;border-radius:50%;">
+            <div>
+              <h4 class="df-name">Reneisa Chaney</h4>
+              <p class="df-role">Mortgage Client</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Wonderful team, very easy to work with, and always on top of everything. I will be recommending Denali to everyone I know.
+        </p>
+      </article>
+
+      <!-- Additional testimonial 8 -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <div style="width:42px;height:42px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:15px;">J</div>
+            <div>
+              <h4 class="df-name">James R.</h4>
+              <p class="df-role">Refinance Client</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          The team explained everything clearly and helped me lock in a great rate. Smooth from start to finish.
+        </p>
+      </article>
+
+      <!-- Additional testimonial 9 -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <div style="width:42px;height:42px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:15px;">M</div>
+            <div>
+              <h4 class="df-name">Maria R.</h4>
+              <p class="df-role">New Homebuyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          I was nervous as a first time buyer but Denali made the entire process clear and easy. I felt supported the whole way.
+        </p>
+      </article>
+
+      <!-- Additional testimonial 10 -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <div style="width:42px;height:42px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:15px;">T</div>
+            <div>
+              <h4 class="df-name">Thomas W.</h4>
+              <p class="df-role">Investor</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Great communication and fast results. Easily one of the best lending teams I’ve worked with.
+        </p>
+      </article>
+
+      <!-- Additional testimonial 11 -->
+      <article class="df-card">
+        <div class="df-card-head">
+          <div class="df-profile">
+            <div style="width:42px;height:42px;border-radius:50%;background:#facc15;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:15px;">S</div>
+            <div>
+              <h4 class="df-name">Sarah K.</h4>
+              <p class="df-role">Homeowner</p>
+            </div>
+          </div>
+        </div>
+        <div class="df-stars">★★★★★</div>
+        <p class="df-text">
+          Outstanding service and a team that genuinely cares. I would absolutely work with them again.
+        </p>
+      </article>
+
+    </div>
+  </div>
+ <div class="df-ph-cta">
+  <a href="https://www.denalifundinggroup.com" target="_blank" rel="noopener">
+    <span class="df-ph-pill">★</span>
+    <span>Read More Google Reviews</span>
+    <span class="df-ph-count">152+</span>
+  </a>
+</div>
+
+
+</section>
